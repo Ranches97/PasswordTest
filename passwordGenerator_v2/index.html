@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Password Generator</title>
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!--FontAwesome-->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <!-- Load Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!--CSS-->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark container-fluid">
+          <a class="navbar-brand"><img src="cyberSentinel-Logo.png" alt="CyberSentinel Logo" height="100%"></a>
+          <button class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdownMenuLink"
+                  role="button"
+                  data-mdb-toggle="dropdown"
+                  aria-expanded="false">
+                  Resources
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li>
+                    <a class="dropdown-item" href="#">Action</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Another action</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+      </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1>Password Generator</h1>
+          <form>
+            <label for="charLength">Password length:</label>
+            <input type="range" min="10" max="40" value="20" 
+              class="totalSliderRange" id="charLength" oninput="this.nextElementSibling.value = this.value">
+              <output>20</output><br>
+          
+            <label for="useUpperCase">Use uppercase characters:</label>
+            <input type="checkbox" id="useUpperCase" name="useUpperCase" checked><br>
+
+            <label for="useSpecialChars">Use special characters:</label>
+            <input type="checkbox" id="useSpecialChars" name="useSpecialChars" checked><br>
+          
+            <label for="useNumbers">Use numbers:</label>
+            <input type="checkbox" id="useNumbers" name="useNumbers" checked><br>
+          
+            <button type="button" onclick="generatePassword()">Generate Password</button>
+          </form>
+          
+          <div id="output">
+            <span id="password"></span>
+          </div>
+        </div>
+      </div>
+  
+          <h1>Password Strength Test</h1>
+          <form>
+            <div class="form-group text-center">
+              <label for="password-input">Paste Password here:</label>
+              <input type="password" id="password-input" class="form-control" oninput="checkPasswordStrength()">
+            </div>
+          </form>
+          
+          <div class="progress justify-content-center">
+            <div class="progress-bar" role="progressbar" id="progress-bar" style="width: 0;"></div>
+          </div>
+          
+          <div class="text-center">
+            <div id="strength-text"></div>
+            <div id="feedback"></div>
+          </div>
+    </div>
+    <div class= "container">
+      <div class="row">
+        <h2>What we offer</h2>
+        At [Company Name], we offer a comprehensive range of cybersecurity solutions to protect your business from evolving threats. Our expert team provides customized services tailored to your specific needs, including:
+
+        <div id="cybersecurity-list">
+  <ul class="list-group flex-row">
+    <li class="list-group-item" style="width: 200px;">Network and data security</li>
+    <li class="list-group-item" style="width: 200px;">Cloud security and data migration</li>
+    <li class="list-group-item" style="width: 200px;">Threat detection and response</li>
+    <li class="list-group-item" style="width: 200px;">Compliance consulting and assessments</li>
+    <li class="list-group-item" style="width: 200px;">Incident response planning and execution</li>
+    <li class="list-group-item" style="width: 200px;">Employee cybersecurity training</li>
+  </ul>
+</div>
+We utilize the latest technologies and industry best practices to ensure that your organization stays ahead of the curve when it comes to cybersecurity. Our team of experienced professionals is committed to providing you with exceptional service and support, so you can rest assured that your data and network are protected at all times.
+
+Contact us today to learn more about our services and how we can help safeguard your business from cyber threats.
+      </div>
+    </div>
+    <!--Script-->
+    <script src="script.js"></script>
+    <!--Footer-->
+    <footer class="footer">
+      <div class="container-fluid bg-dark text-white">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h3>About Us</h3>
+            <p>We are a team of developers committed to providing the best password generator tool to ensure your online security.</p>
+          
+            <h3>Contact Us</h3>
+            <p>Email: support@passwordgenerator.com<br>Phone: +43 123456789<br>Address: 123 Musterstraße, 1100 Wien</p>
+            <p>&copy; 2023 Password Generator. All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
